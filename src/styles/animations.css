@@ -1,0 +1,57 @@
+/**
+ * Custom Animations
+ *
+ * Background pan animation and shimmer effects
+ */
+
+/* Background Pan Animation for Location Card */
+@keyframes bg-pan-transform {
+  0% {
+    transform: scale(1.15) translateX(-4%);
+  }
+  100% {
+    transform: scale(1.15) translateX(4%);
+  }
+}
+
+.bg-pan-slow {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pan-slow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: bg-pan-transform 35s ease-in-out infinite alternate;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-pan-slow > * {
+  position: relative;
+  z-index: 1;
+}
+
+.duration-transition-fast {
+  transition-duration: 150ms;
+}
+
+.duration-transition-base {
+  transition-duration: 200ms;
+}
+
+.duration-1500 {
+  transition-duration: 1500ms;
+}
+
+.leading-tightest {
+  line-height: 1.1;
+}

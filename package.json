@@ -1,0 +1,32 @@
+{
+  "name": "openapi-conference-paris",
+  "version": "1.0.0",
+  "description": "OpenAPI Conference Landing Page",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "predev": "mkdir -p dist && cp src/index.html dist/index.html && cp -r public/* dist/",
+    "dev": "concurrently \"npm:dev:*\" --names \"JS,CSS,HTML,SERVER\" --prefix-colors \"blue,green,magenta,yellow\"",
+    "dev:js": "node esbuild.config.js --watch",
+    "dev:css": "npx tailwindcss -i ./src/styles/input.css -o ./dist/output.css --watch",
+    "dev:html": "nodemon --watch src/index.html --exec \"cp src/index.html dist/index.html\"",
+    "dev:serve": "serve dist -p 3000 --no-port-switching --no-clipboard",
+    "build": "npm run build:js && npm run build:css && npm run build:html && npm run build:assets",
+    "build:js": "node esbuild.config.js",
+    "build:css": "npx tailwindcss -i ./src/styles/input.css -o ./dist/output.css --minify",
+    "build:html": "cp src/index.html dist/index.html",
+    "build:assets": "cp -r public/* dist/ && touch dist/.nojekyll",
+    "preview": "serve dist -p 4173",
+    "clean": "rm -rf dist && mkdir -p dist"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "concurrently": "^9.1.2",
+    "esbuild": "^0.24.2",
+    "nodemon": "^3.1.11",
+    "postcss": "^8.5.6",
+    "postcss-import": "^16.1.0",
+    "serve": "^14.2.4",
+    "tailwindcss": "^4.1.7"
+  }
+}
