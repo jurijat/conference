@@ -1,0 +1,304 @@
+/**
+ * Tailwind CSS Entry Point with All Custom Styles
+ */
+
+@import "tailwindcss";
+
+@theme {
+  /* Custom Breakpoints */
+  --breakpoint-mobile: 390px;
+  --breakpoint-tablet: 960px;
+  --breakpoint-desktop: 1180px;
+  --breakpoint-desktop-xl: 1728px;
+  --breakpoint-desktop-xxl: 2440px;
+
+  /* Custom Spacing */
+  --spacing-10\.5: 2.625rem; /* 42px */
+  --spacing-13: 3.25rem; /* 52px - Speaker avatars */
+  --spacing-18: 4.5rem; /* 72px - Button height */
+  --spacing-26: 6.5rem; /* 104px - Icons */
+  --spacing-30: 7.5rem; /* 120px - Button desktop */
+  --spacing-40: 10rem; /* 160px - OpenAPI logo */
+  --spacing-44: 11rem; /* 176px - OpenAPI logo tablet */
+  --spacing-50: 12.5rem; /* 200px - FOST logo desktop */
+  --spacing-70: 17.5rem; /* 280px - API Masters logo */
+
+  /* Custom Border Radius */
+  --radius-4xl: 2rem;
+
+  /* Custom Transition Duration */
+  --transition-duration-1500: 1500ms;
+
+  /* Custom Line Height */
+  --line-height-tightest: 1.1;
+
+  /* Custom Colors */
+  --color-primary: #47c552;
+  --color-primary-green-dark: #338a3a;
+  --color-primary-green-muted: #4d7051;
+  --color-bg-dark: #000000;
+  --color-bg-dark-elevated: #0a0a0a;
+  --color-bg-card: #1a1a1a;
+  --color-bg-card-highlighted: #4ade80;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #ffffff7a;
+  --color-text-muted: #737373;
+  --color-text-on-green: #000000;
+  --color-border-primary: #4d4d4d;
+}
+
+/* ==================================================================================== */
+/* CUSTOM THEME - CSS VARIABLES                                                        */
+/* ==================================================================================== */
+
+:root {
+  /* ==================== */
+  /* Colors               */
+  /* ==================== */
+
+  --color-primary: #47c552;
+  --color-primary-green-dark: #338a3a;
+  --color-primary-green-muted: #4d7051;
+
+  --color-bg-dark: #000000;
+  --color-bg-dark-elevated: #0a0a0a;
+  --color-bg-card: #1a1a1a;
+  --color-bg-card-highlighted: #4ade80;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #ffffff7a;
+  --color-text-muted: #737373;
+  --color-text-on-green: #000000;
+
+  --color-border-primary: #4d4d4d;
+
+  /* ==================== */
+  /* Spacing Scale        */
+  /* ==================== */
+
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+  --spacing-3xl: 4rem; /* 64px */
+  --spacing-4xl: 6rem; /* 96px */
+
+  /* ==================== */
+  /* Typography           */
+  /* ==================== */
+
+  /* Font Families */
+  --font-family-base: "Onest", "Helvetica", sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 2rem; /* 32px */
+  --font-size-4xl: 2.5rem; /* 40px */
+  --font-size-5xl: 4.5rem; /* 72px */
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ==================== */
+  /* Border Radius        */
+  /* ==================== */
+
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-full: 9999px; /* Full circle */
+
+  /* ==================== */
+  /* Shadows              */
+  /* ==================== */
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* ==================== */
+  /* Transitions          */
+  /* ==================== */
+
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+
+  /* ==================== */
+  /* Layout               */
+  /* ==================== */
+
+  --container-max-width: 1280px;
+  --container-padding: 2rem; /* 32px */
+
+  /* ==================== */
+  /* Z-index Scale        */
+  /* ==================== */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+
+  /* ==================== */
+  /* Breakpoints          */
+  /* ==================== */
+
+  /* Custom breakpoints (mobile-first) */
+  --breakpoint-mobile: 24.375rem; /* 390px */
+  --breakpoint-tablet: 60rem; /* 960px */
+  --breakpoint-desktop: 73.75rem; /* 1180px */
+  --breakpoint-desktop-xl: 108rem; /* 1728px */
+  --breakpoint-desktop-xxl: 152rem; /* 2440px */
+
+  /* Tailwind defaults */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* ==================================================================================== */
+/* CUSTOM ANIMATIONS                                                                   */
+/* ==================================================================================== */
+
+/* Background Pan Animation for Location Card */
+@keyframes bg-pan-transform {
+  0% {
+    transform: scale(1.15) translateX(-4%);
+  }
+  100% {
+    transform: scale(1.15) translateX(4%);
+  }
+}
+
+.bg-pan-slow {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pan-slow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: bg-pan-transform 35s ease-in-out infinite alternate;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-pan-slow > * {
+  position: relative;
+  z-index: 1;
+}
+
+.duration-transition-fast {
+  transition-duration: 150ms;
+}
+
+.duration-transition-base {
+  transition-duration: 200ms;
+}
+
+.duration-1500 {
+  transition-duration: 1500ms;
+}
+
+/* ==================================================================================== */
+/* AGENDA DYNAMIC WIDTH CLASSES                                                        */
+/* ==================================================================================== */
+
+/* Dynamic width classes for pair and three-item layouts */
+.pair-item-1,
+.pair-item-2,
+.three-item-1,
+.three-item-2,
+.three-item-3 {
+  width: 100%;
+}
+
+/* Apply dynamic widths on tablet and up */
+@media (min-width: 768px) {
+  .pair-item-1,
+  .pair-item-2,
+  .three-item-1,
+  .three-item-2,
+  .three-item-3 {
+    width: var(--width-desktop-xxl);
+  }
+}
+
+/* Custom spacing utilities using CSS variables */
+.py-spacing-md {
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+}
+
+/* Scrollbar hiding */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Speaker Avatar Hover Effects */
+
+/* LinkedIn icon - hidden by default */
+.linkedin-icon-overlay {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Speaker overlay and LinkedIn icon - visible on hover */
+.speaker-avatar-link:hover .speaker-overlay {
+  opacity: 1 !important;
+}
+
+.speaker-avatar-link:hover .linkedin-icon-overlay {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* Force text inheritance for spans inside links/buttons */
+a span,
+button span {
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
