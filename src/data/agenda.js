@@ -56,7 +56,6 @@ export const agendaSections = [
             linkedin: "https://www.linkedin.com/in/lornajane/",
             isTscMember: true,
             isOaiMember: true,
-            slidesUrl: "https://google.com",
           },
         ],
       },
