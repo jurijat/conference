@@ -19,6 +19,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -31,13 +32,11 @@ jobs:
           cache-dependency-path: "package-lock.json"
 
       - name: Install dependencies
-        working-directory:
         run: npm ci
 
       - name: Build
-        working-directory:
         env:
-          BASE_PATH: "conference"
+          BASE_PATH: ${{ vars.BASE_PATH }}
         run: npm run build
 
       - name: Upload artifact
