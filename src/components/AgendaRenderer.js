@@ -98,12 +98,12 @@ export class AgendaRenderer {
    * Render speaker info (single speaker)
    */
   renderSpeakerInfo(speaker) {
-    const companyText = speaker.job
-      ? `${speaker.job}, ${speaker.company}`
-      : speaker.company;
-
     const tscBadge = speaker.isTscMember
-      ? `<span class="inline-flex items-center px-1.5 py-0.5 rounded-3xl text-[10px] h-5 desktop:text-[11px] font-normal bg-primary-green-dark text-black uppercase leading-[18px] tracking-wider ml-2 whitespace-nowrap shrink-0">TSC Member</span>`
+      ? `<span class="inline-flex items-center px-1.5 py-0.5 rounded-3xl text-[10px] h-5 desktop:text-[11px] font-normal bg-primary-green-dark text-black uppercase leading-[18px] tracking-wider ml-2 whitespace-nowrap shrink-0" title="Technical Steering Committee member">TSC</span>`
+      : "";
+
+    const oaiBadge = speaker.isOaiMember
+      ? `<span class="inline-flex items-center px-1.5 py-0.5 rounded-3xl text-[10px] h-5 desktop:text-[11px] font-normal bg-primary-green-dark text-black uppercase leading-[18px] tracking-wider ml-2 whitespace-nowrap shrink-0" title="OpenAPI Initiative member">OAI</span>`
       : "";
 
     return `
@@ -113,18 +113,20 @@ export class AgendaRenderer {
           ${
             speaker.avatar
               ? `<img src="${speaker.avatar}" alt="${speaker.name}" class="w-full h-full object-cover" />`
-              : `<div class="w-full h-full bg-text-muted/20"></div>`
+              : `<div class="w-full h-full bg-primary-gray/20"></div>`
           }
         </div>
 
         <!-- Speaker Details -->
         <div class="flex flex-col gap-0.5 desktop:gap-2 tablet:gap-0">
           <div class="flex items-center text-[16px] desktop:text-xl desktop-xxl:text-[28px] leading-none py-1 tablet:py-0 font-bold text-text-primary uppercase tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
-            ${speaker.name}${tscBadge}
+            ${speaker.name}${tscBadge}${oaiBadge}
           </div>
-          <div class="text-[13px] desktop:text-[13px] desktop-xxl:text-[16px] text-text-muted uppercase group-hover:text-text-on-green tracking-widest transition-colors duration-200 ease-in-out">
-            ${companyText}
-          </div>
+          ${
+            speaker.company
+              ? `<div class="text-sm desktop:text-sm desktop-xxl:text-[16px] text-primary-gray uppercase group-hover:text-text-on-green tracking-widest transition-colors duration-200 ease-in-out">${speaker.company}</div>`
+              : ""
+          }
         </div>
       </div>
     `;
@@ -141,14 +143,14 @@ export class AgendaRenderer {
             ${
               speakers[0].avatar
                 ? `<img src="${speakers[0].avatar}" alt="${speakers[0].name}" class="w-full h-full object-cover" />`
-                : `<div class="w-full h-full bg-text-muted/20"></div>`
+                : `<div class="w-full h-full bg-primary-gray/20"></div>`
             }
           </div>
           <div class="w-12 h-12 tablet:w-12 tablet:h-12 desktop-xxl:w-12 desktop-xxl:h-12 rounded-full overflow-hidden shrink-0 transition-all duration-300 group-hover:opacity-0 group-hover:-translate-x-full">
             ${
               speakers[1].avatar
                 ? `<img src="${speakers[1].avatar}" alt="${speakers[1].name}" class="w-full h-full object-cover" />`
-                : `<div class="w-full h-full bg-text-muted/20"></div>`
+                : `<div class="w-full h-full bg-primary-gray/20"></div>`
             }
           </div>
         </div>
@@ -179,12 +181,12 @@ export class AgendaRenderer {
       <div class="bg-black border-b md:border-0 md:border-b py-8 px-4 tablet:p-4 tablet:py-8 desktop:p-16 desktop-xxl:p-24 flex flex-col justify-between h-full transition-colors duration-200 ease-in-out ${hoverClass} ${borderClass} ${clickableClass} border-border-primary" ${dataItemId}>
         <!-- Time and Category -->
         <div class="flex items-center justify-between mb-2">
-          <div class="text-xs tablet:text-[13px] text-white tablet:text-white desktop-xxl:text-[16px] uppercase tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
+          <div class="text-xs tablet:text-sm text-white tablet:text-white desktop-xxl:text-[16px] uppercase tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
             ${item.time}
             ${
               item.category
                 ? `
-              <span class="mx-3 text-text-muted transition-colors duration-200 ease-in-out group-hover:text-text-on-green">/</span>
+              <span class="mx-3 text-primary-gray transition-colors duration-200 ease-in-out group-hover:text-text-on-green">/</span>
               <span class="text-primary group-hover:text-text-on-green font-medium transition-colors duration-200 ease-in-out">
                 ${item.category}
               </span>
@@ -211,7 +213,7 @@ export class AgendaRenderer {
                     .map((speaker) => this.renderSpeakerInfo(speaker))
                     .join("")
                 : item.badge
-                ? `<div class="text-xs flex items-center text-text-muted desktop:text-[13px] desktop-xxl:text-[16px] font-normal uppercase desktop-xl:-ml-6 desktop-xl:-mb-6 desktop-xxl:-ml-12 desktop-xxl:-mb-12 desktop-xl:h-20 tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
+                ? `<div class="text-xs flex items-center text-primary-gray desktop:text-sm desktop-xxl:text-[16px] font-normal uppercase desktop-xl:-ml-6 desktop-xl:-mb-6 desktop-xxl:-ml-12 desktop-xxl:-mb-12 desktop-xl:h-20 tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
                       ${item.badge}
                     </div>`
                 : ""
@@ -247,7 +249,7 @@ export class AgendaRenderer {
         ${
           section.timeRange
             ? `
-          <div class="text-sm text-text-muted uppercase tracking-widest leading-none">
+          <div class="text-sm text-primary-gray uppercase tracking-widest leading-none">
             ${section.timeRange}
           </div>
         `
