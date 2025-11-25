@@ -37,7 +37,7 @@ jobs:
       - name: Build
         working-directory:
         env:
-          BASE_PATH: ""
+          BASE_PATH: "conference"
         run: npm run build
 
       - name: Upload artifact
