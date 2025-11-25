@@ -151,7 +151,6 @@ export const agendaSections = [
             company: "Jentic",
             avatar: asset("/images/speakers/Frank.jpg"),
             linkedin: "https://www.linkedin.com/in/frank-kilcommins",
-            isTscMember: true,
             isOaiMember: true,
           },
         ],
