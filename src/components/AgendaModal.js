@@ -188,8 +188,13 @@ export class AgendaModal {
                 ${oaiBadge}
               </div>
               ${
-                speaker.company
-                  ? `<div class="text-sm text-primary-gray uppercase tracking-widest leading-5">${speaker.company}</div>`
+                speaker.job || speaker.company
+                  ? `<div class="text-sm text-primary-gray uppercase tracking-widest leading-5">${[
+                      speaker.job,
+                      speaker.company,
+                    ]
+                      .filter(Boolean)
+                      .join(", ")}</div>`
                   : ""
               }
             </div>
@@ -215,8 +220,13 @@ export class AgendaModal {
             ${oaiBadge}
           </div>
           ${
-            speaker.company
-              ? `<div class="text-sm text-primary-gray uppercase tracking-widest mb-4">${speaker.company}</div>`
+            speaker.job || speaker.company
+              ? `<div class="text-sm text-primary-gray uppercase tracking-widest mb-4">${[
+                  speaker.job,
+                  speaker.company,
+                ]
+                  .filter(Boolean)
+                  .join(", ")}</div>`
               : ""
           }
           <div class="flex gap-2">
@@ -267,7 +277,7 @@ export class AgendaModal {
       >
         <!-- Modal -->
         <div
-          class="bg-bg-dark w-full h-full tablet:h-[min(820px,85vh)] tablet:max-w-[960px] flex flex-col overflow-hidden border border-border-primary relative"
+          class="bg-bg-dark w-full h-full tablet:h-[min(820px,85vh)] tablet:max-w-[960px] flex flex-col overflow-hidden tablet:border tablet:border-border-primary relative"
         >
           <button
             data-close-btn
