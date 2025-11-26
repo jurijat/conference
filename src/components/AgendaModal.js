@@ -226,7 +226,7 @@ export class AgendaModal {
                   speaker.company,
                 ]
                   .filter(Boolean)
-                  .join(", ")}</div>`
+                  .join(" / ")}</div>`
               : ""
           }
           <div class="flex gap-2">
