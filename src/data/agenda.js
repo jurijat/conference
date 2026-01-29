@@ -10,7 +10,7 @@ export const agendaSections = [
   {
     id: "morning-sessions",
     title: "Morning Sessions",
-    timeRange: "09:00 — 12:00",
+    timeRange: "09:30 — 12:00",
     items: [
       {
         id: "1",
@@ -113,9 +113,9 @@ export const agendaSections = [
     ],
   },
   {
-    id: "mid-day-sessions",
-    title: "Mid-Day Sessions",
-    timeRange: "12:00 — 15:00",
+    id: "afternoon-sessions",
+    title: "Afternoon Sessions",
+    timeRange: "01:00 — 03:30",
     items: [
       {
         id: "7",
@@ -191,49 +191,6 @@ export const agendaSections = [
             avatar: "",
           },
         ],
-      },
-    ],
-  },
-  {
-    id: "afternoon-sessions",
-    title: "Afternoon Sessions",
-    timeRange: "14:30 — 15:30",
-    items: [
-      {
-        id: "12",
-        time: "14:30",
-        category: "Break",
-        title: "Networking Break",
-        description:
-          "Afternoon networking break in the San Jose Convention Center Expo Hall. Last chance to connect with speakers and attendees before the closing sessions.",
-        speakers: [],
-        icon: asset("/images/break-fest.svg"),
-        disableHover: true,
-      },
-      {
-        id: "13",
-        time: "15:00",
-        category: "OpenAPI Summit",
-        title: "Coming Soon",
-        description: "Coming Soon!",
-        speakers: [
-          {
-            name: "Speaker Coming Soon",
-            job: "",
-            company: "",
-            avatar: "",
-          },
-        ],
-      },
-      {
-        id: "14",
-        time: "15:30",
-        category: "Closing",
-        title: "Closing Ceremony",
-        description:
-          "Official DeveloperWeek Closing Ceremony. Join us for closing remarks and a celebration of the day's achievements.",
-        speakers: [],
-        disableHover: true,
       },
     ],
   },
