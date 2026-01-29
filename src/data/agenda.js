@@ -139,7 +139,7 @@ export const agendaSections = [
         time: "13:30",
         category: "OpenAPI Summit",
         title: "Coming Soon!",
-        description: "OpenAPI Summit: Coming Soon!",
+        description: "Coming Soon!",
         speakers: [
           {
             name: "Emmanuel Paraskakis",
