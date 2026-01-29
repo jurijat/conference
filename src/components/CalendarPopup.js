@@ -11,9 +11,9 @@ export class CalendarPopup {
     this.container = null;
 
     // Event details
-    this.eventTitle = "OpenAPI Conference San Jose 2026";
+    this.eventTitle = "OpenAPI Summit San Jose 2026";
     this.eventDescription =
-      "Join us at the OpenAPI Conference in San Jose. More info: https://conference.openapis.org";
+      "Join us at the OpenAPI Summit in San Jose. More info: https://conference.openapis.org";
     this.eventLocation =
       "San Jose Convention Center, 150 W San Carlos St, San Jose, CA 95113, USA";
     this.startDate = "2026-02-20T09:00:00";
