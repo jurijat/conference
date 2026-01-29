@@ -13,16 +13,6 @@ export const agendaSections = [
     timeRange: "09:00 — 12:00",
     items: [
       {
-        id: "1",
-        time: "09:00",
-        category: "Hackathon",
-        title: "DeveloperWeek 2026 Hackathon",
-        description:
-          "Join 600+ developers building new apps, bots — in person or online. Participants can build any app of their choice and will compete for $12,500+ in cash, products and prizes. Put yourself in the center of the developer world!",
-        speakers: [],
-        disableHover: true,
-      },
-      {
         id: "2",
         time: "09:30",
         category: "OpenAPI Summit",
