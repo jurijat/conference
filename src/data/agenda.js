@@ -13,11 +13,11 @@ export const agendaSections = [
     timeRange: "09:00 — 12:00",
     items: [
       {
-        id: "2",
+        id: "1",
         time: "09:30",
         category: "OpenAPI Summit",
-        title: "Opening Keynote",
-        description: "Coming Soon!",
+        title: "Summit Welcome and OpenAPI in the Age of AI",
+        description: "Welcome to the OpenAPI Summit! We have an exciting program to share, with presentations talking about new specifications as well as presentations that dive into practices, applications, and an outlook of things are going. We also we have a brief look of where OpenAPI is situated in the age of AI and MCP, and how things are going to develop after the recent publication of version 3.2 of the specification.",
         speakers: [
           {
             name: "Erik Wilde",
