@@ -30,7 +30,7 @@ export const agendaSections = [
         ],
       },
       {
-        id: "3",
+        id: "2",
         time: "10:00",
         category: "OpenAPI Summit",
         title: "You May Have OpenAPI, But Is It AI-Ready?",
