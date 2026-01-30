@@ -59,6 +59,7 @@ export const agendaSections = [
           {
             name: "Henry Andrews",
             company: "OpenAPI Initiative",
+            avatar: asset("/images/speakers/Henry.jpg"),
             linkedin: "https://www.linkedin.com/in/handrews",
             isOaiMember: true,
           },
