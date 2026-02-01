@@ -133,8 +133,8 @@ export const agendaSections = [
         id: "7",
         time: "1:30pm",
         category: "OpenAPI Summit",
-        title: "Coming Soon!",
-        description: "Coming Soon!",
+        title: "AI-Driven API Design with OpenAPI",
+        description: "Good API design is no longer reserved for experts. With LLMs and OpenAPI, you can go from user research to a validated prototype in under an hour — a process that used to take weeks. But AI isn't magic. Context is everything. In this session, you'll learn a practical workflow for AI-driven API design: synthesizing market research into markdown, standardizing your API guidelines, treating prompts as code, and validating outputs with linting and real users. Walk away with prompts, templates, and a repeatable process you can use Monday morning.",
         speakers: [
           {
             name: "Emmanuel Paraskakis",
